@@ -51,26 +51,26 @@ const ShadowRootContainer: React.FC<ShadowRootContainerProps> = ({ children, dep
 
 const NestedShadowRoots: React.FC = () => (
     <ShadowRootContainer depth={1}>
-        <div className="layer-1">
+        <div className="layer-1" id="num-1">
             First layer of Shadow root.
         </div>
         <ShadowRootContainer depth={2}>
-            <div className="layer-2">
+            <div className="layer-2" id="num-2">
                 Second layer of Shadow root.
             </div>
             <ShadowRootContainer depth={3}>
-                <div className="layer-3">
+                <div className="layer-3" id="num-3">
                     Third layer of Shadow root, it's getting hotter here.
                 </div>
                 <ShadowRootContainer depth={4}>
-                    <div className="layer-4">
+                    <div className="layer-4" id="num-4">
                         This is deeply nested within 4 shadow roots. Burning wild.
                     </div>
-                </ShadowRootContainer>
-                <ShadowRootContainer depth={5}>
-                    <div className="layer-5">
-                        <button>This is what we are looking for</button>
-                    </div>
+                    <ShadowRootContainer depth={5}>
+                        <div className="layer-5" id="num-5">
+                            <button>This is what we are looking for</button>
+                        </div>
+                    </ShadowRootContainer>
                 </ShadowRootContainer>
             </ShadowRootContainer>
         </ShadowRootContainer>
